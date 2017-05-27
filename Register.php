@@ -21,3 +21,39 @@
 
 </body>
 </html>
+
+
+<?php
+$link=@mysqli_connect('localhost'
+					 ,'root'
+					 ,'cc1124'
+					 ,'final_database' );
+/*
+if($link==true){
+	echo "connect";
+}else{
+	echo "failed";
+}
+
+$final_database="final_database";
+
+
+if ( !mysqli_select_db($link, $final_database) ){
+   echo("無法開啟 $final_database 資料庫!<br/>");
+}
+else{
+   echo "資料庫: $final_database 開啟成功!<br/>";
+}
+*/
+
+$result=mysqli_query($link,"SELECT `username` FROM userdata");
+
+
+while($row=mysqli_fetch_assoc($result)){
+
+	echo $row["username"];
+
+
+}
+
+?>
