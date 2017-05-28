@@ -8,7 +8,7 @@
 <?php
 
 session_start();
-if(isset($_SEESION["success"])){
+if(isset($_SESSION["success"])){
 	echo "<center>歡迎進入</center></br>";
 	echo "<center><a href='Index.html'></center>";
 }else{
