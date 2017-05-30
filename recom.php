@@ -11,5 +11,5 @@ $link = @mysqli_connect('localhost','huai','huaihuai123','recommend');
 
   $sql_query = "SELECT * from recom";
   $result=mysqli_query($link,$sql_query);
-  
+
 ?>

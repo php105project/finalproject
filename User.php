@@ -8,15 +8,17 @@
 <?php
 
 session_start();
-if(isset($_SEESION["success"])){
-	echo "<center>歡迎進入</center></br>";
-	echo "<center><a href='Index.html'></center>";
+if(isset($_SESSION["user"])){
+	echo "<center>歡迎使用者</center></br>";
+	echo "<center><a href='Index.php'></center>";
 }else{
 	echo "<center>非法進入</center>";
-	header("Refresh:3;url=Index.html");  
+	header("Refresh:3;url=Index.php");  
 }
 
 ?>
+
+<input type="button" value="登出" onclick="Location:Index.php">
 
 </body>
 </html>
