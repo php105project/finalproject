@@ -2,6 +2,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>推薦歌曲</title>
+	<center>
 	<?php
 
 session_start();
@@ -23,22 +24,18 @@ $result = mysqli_query($link,$sql);
 echo "<table border=1>";
 echo "<tr>";
 echo "<td>";
-echo "recom_id";
+echo "歌名";
 echo "</td><td>";
-echo "songname";
+echo "歌手";
 echo "</td><td>";
-echo "singer";
+echo "歌曲資料";
 echo "</td><td>";
-echo "songinform";
-echo "</td><td>";
-echo "recom_num";
+echo "推薦次數";
 echo "</td>";
 echo "</tr>";
 while($row=mysqli_fetch_assoc($result)){
 echo "<tr>";
 echo "<td>";
-echo $row["recom_id"];
-echo "</td><td>";
 echo $row["songname"];
 echo "</td><td>";
 echo $row["singer"];
@@ -52,6 +49,7 @@ echo "<tr>";
 echo "<table>";
 
 ?>
+</center>
 </head>
 
 <body>
@@ -64,9 +62,12 @@ echo "<table>";
 推薦歌手<input type="text" name="rec_singer"><br>
 推薦歌曲資料<input type="text" name="songinform"><br>
 
-<input type="submit" value="提交" />
+<input type="submit" value="提交" /><br>
 
 </form>
+<?php
+echo "<a href='index.php'>登出</a>";
+?>
 </center>
 </body>
 

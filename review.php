@@ -1,12 +1,17 @@
+<!DOCTYPE html>
 <html>
+<meta charset="utf-8">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>推薦歌曲</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>管理者頁面</title>
+	<center>
+
+
 	<?php
 
 session_start();
-if(isset($_SESSION["user"])){
-	echo "<center>歡迎使用者進入推薦頁面</center></br>";
+if(isset($_SESSION["manager"])){
+	echo "<center>歡迎管理者進入審核頁面</center></br>";
 }else{
 	echo "<center>非法進入</center>"; 
 	header("Refresh:3;url=Index.php");
@@ -52,22 +57,32 @@ echo "<tr>";
 echo "<table>";
 
 ?>
-</head>
-
-<body>
-
-<center>
-
-<form action="recom.php" method="post">
-
-推薦歌名<input type="text" name="rec_songname"><br>
-推薦歌手<input type="text" name="rec_singer"><br>
-推薦歌曲資料<input type="text" name="songinform"><br>
-
-<input type="submit" value="提交" />
-
-</form>
 </center>
-</body>
+</head>
+<body>
+</br>
+</br>
+</br>
+	<center>
+		通過審核
+	<form action="add_rec.php" method="post">
+	通過推薦編號<input type="text" name="add_num"><br>
+	<input type="submit" name="sent" value="送出"></br></br>
+	</br>
+	</br>
+	</br>
+	</form>
 
+		刪除審核
+	<form action="del_rec.php" method="post">
+	刪除推薦編號<input type="text" name="del_num"><br>
+	<input type="submit" name="sent" value="送出"></br></br>
+	</form>	
+	</br>
+	</br>
+	</br>
+	<a href="manager.php">回上一頁</a>
+
+	</center>
+</body>
 </html>
