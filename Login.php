@@ -6,27 +6,38 @@
 <body>
 
 <?php
-
 session_start();
-
 $id=$_POST["id"];
 $pwd=$_POST["pwd"];
+$date = strtotime("+7 days", time());
 
-$manid="q17009";
-$manpwd="q1633218932";
 
-echo "<center>你的帳戶為:".$id."</br></center>";
-echo "<center>你的密碼為:".$pwd."</br></center>";
+$link=@mysqli_connect('localhost'
+					 ,'root'
+					 ,'cc1124'
+					 ,'final_database' );
+$sql="SELECT * FROM userdata WHERE username = '$id'";
+$result = mysqli_query($link,$sql);
+$row = @mysqli_fetch_row($result);
 
-if($id==$manid && $pwd==$manpwd){
-//	echo "<center>登入成功</center>";
-	$_SESSION["success"]="yes";
+
+if($id=="manager" && $pwd=="password"){
+	echo "<center>歡迎管理者</center>";
+	$_SESSION["manager"]="yes";
 	setcookie("id",$id,$date);
-	header('Location:User.php');
-	exit;
+	header('Location:manager.php');
 }else{
-	echo "<center>登入失敗，3秒後自動跳轉登入頁面</center>";
-	header("Refresh:3;url=Index.html");                         //如果登入失敗，3秒後自動跳轉Index.php
+	if($row[0] == $id && $row[1] == $pwd)
+	{
+    	echo "<center>登入成功</center>";
+		$_SESSION["user"]="yes";
+		setcookie("id",$id,$date);
+		header('Location:User.php');
+		exit;
+	}else{
+		echo "<center>登入失敗，3秒後自動跳轉登入頁面</center>";
+		header("Refresh:3;url=Index.php");                        //如果登入失敗，3秒後自動跳轉Index.php
+	}
 }
 
 ?>
