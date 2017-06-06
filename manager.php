@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <meta charset="utf-8">
 <head>
@@ -26,8 +26,10 @@
 
 $link=@mysqli_connect('localhost'
 					 ,'root'
-					 ,'cc1124'
+					 ,'284ru/ m6'
 					 ,'final_database' );
+
+
 mysqli_query($link,"SET NAMES 'UTF8'");
 $sql="SELECT * FROM song";
 $result = mysqli_query($link,$sql);
@@ -149,7 +151,7 @@ echo "<table>";
 </br>
 </br>
 </br>
-<a href='index.php'>登出</a>
+<a href='Index.php'>登出</a>
 </center>
 
 </body>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<title>登出過程</title>
@@ -8,7 +8,7 @@
 <?php
 
 session_start();
-header('Location:Index.html');
+header('Location:Index.php');
 
 ?>
 

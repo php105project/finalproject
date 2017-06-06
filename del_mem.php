@@ -27,7 +27,7 @@ header("Content-Type:text/html; charset=utf-8");
 
 $link=@mysqli_connect('localhost'
 					 ,'root'
-					 ,'cc1124'
+					 ,'284ru/ m6'
 					 ,'final_database' );
 mysqli_query($link,"SET NAMES 'UTF8'");
 

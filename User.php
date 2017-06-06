@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<title>進入使用頁面</title>
@@ -25,7 +25,7 @@ if(isset($_SESSION["user"])){
 
 $link=@mysqli_connect('localhost'
 					 ,'root'
-					 ,'cc1124'
+					 ,'284ru/ m6'
 					 ,'final_database' );
 mysqli_query($link,"SET NAMES 'UTF8'");
 $sql="SELECT * FROM song";
@@ -86,7 +86,7 @@ echo "<table>";
 <br>
 <br>
 
-<a href='index.php'>登出</a>
+<a href='Index.php'>登出</a>
 </center>
 </body>
 </html>

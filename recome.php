@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>推薦歌曲</title>
@@ -15,7 +15,7 @@ if(isset($_SESSION["user"])){
 
 $link=@mysqli_connect('localhost'
 					 ,'root'
-					 ,'cc1124'
+					 ,'284ru/ m6'
 					 ,'final_database' );
 mysqli_query($link,"SET NAMES 'UTF8'");
 $sql="SELECT * FROM recom";
@@ -66,7 +66,7 @@ echo "<table>";
 
 </form>
 <br><br><br>
-<a href='user.php'>回上一頁</a>
+<a href='User.php'>回上一頁</a>
 </center>
 </body>
 

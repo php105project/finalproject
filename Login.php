@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<title>登入過程</title>
@@ -14,7 +14,7 @@ $date = strtotime("+7 days", time());
 
 $link=@mysqli_connect('localhost'
 					 ,'root'
-					 ,'cc1124'
+					 ,'284ru/ m6'
 					 ,'final_database' );
 $sql="SELECT * FROM userdata WHERE username = '$id'";
 $result = mysqli_query($link,$sql);

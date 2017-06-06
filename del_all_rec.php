@@ -3,7 +3,7 @@
 header("Content-Type:text/html; charset=utf-8");
 $link=@mysqli_connect('localhost'
 					 ,'root'
-					 ,'cc1124'
+					 ,'284ru/ m6'
 					 ,'final_database' );
 
 $sql_del="DELETE FROM recom WHERE 1";
