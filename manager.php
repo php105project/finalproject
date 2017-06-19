@@ -105,7 +105,7 @@ echo "<td>";
 echo $row["song_id"];
 echo "</td><td>";
 echo $row["songname"];
-echo "</td><td>";
+echo "</t數據統計d><td>";
 echo $row["singer"];
 echo "</td><td>";
 echo $row["link"];
@@ -136,6 +136,11 @@ echo "<table>";
 </br>
 
 <a href="member.php">管理會員資料</a>
+
+</br>
+</br>
+</br>
+<a href="analyze.php">數據統計</a>
 
 </br>
 </br>
