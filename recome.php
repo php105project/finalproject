@@ -5,9 +5,11 @@
 	<center>
 	<?php
 
+$id=$_COOKIE['id'];
+
 session_start();
 if(isset($_SESSION["user"])){
-	echo "<center>歡迎使用者進入推薦頁面</center></br>";
+	echo "<center>歡迎使用者".$id."進入推薦頁面</center></br>";
 }else{
 	echo "<center>非法進入</center>"; 
 	header("Refresh:3;url=Index.php");
