@@ -65,19 +65,15 @@ echo "<table>";
 
 ?>
 
-<form action="SBN_result.php" method="post">
+<form action="search_result.php" method="post">
 
-請輸入搜尋歌名：<input type="text" name="songname"><br>搜尋請輸入全名<br>
+請輸入搜尋：<input type="text" name="search"><br><br>
 
 <input type="submit" value="找歌來聽">
 
 </form>
-<br><br>OR<br><br>
-<form action="SBS_result" method="post">
 
-輸入搜尋歌手：<input type="text" name="singer"><br>搜尋請輸入全名<br>
 
-<input type="submit" value="找歌來聽"><br><br><br>
 
 
 <a href="recome.php">推薦新歌</a><br>
