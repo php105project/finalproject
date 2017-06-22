@@ -37,6 +37,8 @@ $result = mysqli_query($link,$sql);
 $sql_rec="SELECT * FROM recom";
 $result_rec = mysqli_query($link,$sql_rec);
 
+
+
 echo "使用者推薦的歌曲";
 echo "<table border=1>";
 echo "<tr>";
@@ -48,6 +50,10 @@ echo "</td><td>";
 echo "連結";
 echo "</td><td>";
 echo "推薦次數";
+echo "</td><td>";
+echo "新增推薦";
+echo "</td><td>";
+echo "刪除推薦";
 echo "</td>";
 echo "</tr>";
 while($row=mysqli_fetch_assoc($result_rec)){
@@ -60,6 +66,14 @@ echo "</td><td>";
 echo $row["songinform"];
 echo "</td><td>";
 echo $row["recom_num"];
+echo "</td><td>";
+?>
+<a href=add_rec.php?id=<?php echo $row["recom_id"] ?>>新增推薦<a>
+<?php
+echo "</td><td>";
+?>
+<a href=del_rec.php?id=<?php echo $row["recom_id"] ?>>刪除推薦<a>
+<?php
 echo "</td>";
 echo "<tr>";
 }
@@ -81,6 +95,8 @@ echo "</td><td>";
 echo "連結";
 echo "</td><td>";
 echo "點擊次數";
+echo "</td><td>";
+echo "刪除歌曲";
 echo "</td>";
 echo "</tr>";
 while($row=mysqli_fetch_assoc($result)){
@@ -95,6 +111,10 @@ echo "</td><td>";
 echo $row["link"];
 echo "</td><td>";
 echo $row["clickrate"];
+echo "</td><td>";
+?>
+<a href=del.php?id=<?php echo $row["song_id"] ?>>刪除歌曲<a>
+<?php
 echo "</td>";
 echo "<tr>";
 }
@@ -110,30 +130,6 @@ echo "<table>";
 <center>
 </br>
 </br>
-</br>
-新增歌曲
-
-<form action="add.php" method="post">
-歌名<input type="text" name="Add_songname"><br>
-歌手<input type="text" name="Add_singer"><br>
-連結<input type="text" name="Add_link"><br>
-
-<input type="submit" name="sent" value="送出"></br>
-
-</form>
-</br>
-</br>
-</br>
-刪除歌曲
-<form action="del.php" method="post">
-
-
-歌曲ID<input type="text" name="song_id"><br>
-
-
-<input type="submit" name="sent" value="送出"></br>
-
-</form>
 
 </br>
 </br>
@@ -141,12 +137,10 @@ echo "<table>";
 
 <a href="member.php">管理會員資料</a>
 
-
 </br>
 </br>
 </br>
-
-<a href="del_all_rec.php">***清除全部推薦資料***</a>
+<a href="analyze.php">數據統計</a>
 
 </br>
 </br>

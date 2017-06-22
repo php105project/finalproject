@@ -7,9 +7,11 @@
 <center>
 <?php
 
+$id=$_COOKIE['id'];
+
 session_start();
 if(isset($_SESSION["user"])){
-	echo "<center>歡迎使用者</center></br>";
+	echo "<center>歡迎使用者".$id."</center></br>";
 
 }else{
 	echo "<center>非法進入</center>";
@@ -65,20 +67,18 @@ echo "<table>";
 
 ?>
 
-<form action="SBN_result.php" method="post">
+<br><br>
+<br><br>
 
-請輸入搜尋歌名：<input type="text" name="songname"><br>搜尋請輸入全名<br>
+<form action="search_result.php" method="post">
+
+搜尋歌曲：<input type="text" name="search"><br><br>
 
 <input type="submit" value="找歌來聽">
 
 </form>
-<br><br>OR<br><br>
-<form action="SBS_result" method="post">
 
-輸入搜尋歌手：<input type="text" name="singer"><br>搜尋請輸入全名<br>
-
-<input type="submit" value="找歌來聽"><br><br><br>
-
+<br><br>
 
 <a href="recome.php">推薦新歌</a><br>
 
